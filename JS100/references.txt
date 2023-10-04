@@ -1,0 +1,10 @@
+https://developer.mozilla.org/en-US/docs/Learn/JavaScript
+https://www.programiz.com/javascript
+https://eloquentjavascript.net
+Colt Stelle 
+Web Simplified 
+Jack Herrington 
+ChatGPT 
+Stack Overflow 
+FreeCodeCamp 
+Odin Project
