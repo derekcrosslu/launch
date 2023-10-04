@@ -1,0 +1,21 @@
+{
+  "name": "js101",
+  "version": "1.0.0",
+  "main": "How_big_is_the_room.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "readline": "^1.3.0",
+    "readline-sync": "^1.4.10"
+  },
+  "description": "",
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.12.1",
+    "eslint-cli": "^1.1.1"
+  }
+}
