@@ -1,0 +1,15 @@
+{
+  "en": {
+    "welcome": "Welcome to Calculator! Enter your name:",
+    "validName": "Make sure to enter a valid name.",
+    "num1": "Enter the first number:",
+    "num2": "Enter the second number:",
+    "operation": "Choose the operation:\n1. Add\n2. Subtract\n3. Multiply\n4. Divide\n",
+    "another": "Would you like to perform another operation? (y/n)",
+    "end": "Thank you for using Calendar. Good Bye!!!"
+  },
+  "es": {
+    "welcome": "Bienvenido a la calculadora! Entre su nombre:",
+    "validName": "Asegúrese de entrar un nombre válido."
+  }
+}
