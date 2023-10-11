@@ -1,8 +1,8 @@
 {
   "en": {
     "welcome": "Welcome to the Mortage Car Loan Calculator!",
-    "loan_amount": "Please enter loan amount you wish to borrow ($xxx).",
-    "apr": "Please enter the APR of the loan (%x) .",
+    "loan_amount": "Please enter loan amount you wish to borrow. Example: $4000 as 4000",
+    "apr": "Please enter the APR of the loan. Example: 5% as 5 or 2.5% as 2.5.",
     "duration": "Please enter the number of years you will borrow the loan.",
     "invalid": "Invalid input, please try again.",
     "payments": "Your monthly payments will be ",
@@ -10,8 +10,8 @@
   },
   "es": {
     "welcome": "Bienvenido a la calculadora de préstamos hipotecarios para automóviles!",
-    "loan_amount": "Por favor ingrese la cantidad del préstamo que desea pedir prestado ($xxx).",
-    "apr": "Por favor ingrese el APR del préstamo (%x).",
+    "loan_amount": "Por favor ingrese la cantidad del préstamo que desea pedir prestado. Ejemplo: $4000 como 4000",
+    "apr": "Por favor ingrese el APR del préstamo. Ejemplo: 5% como 5 o 2.5% como 2.5.",
     "duration": "Por favor ingrese el número de años que pedirá prestado el préstamo.",
     "invalid": "Entrada no válida, por favor intente nuevamente.",
     "payments": "Sus pagos mensuales serán ",

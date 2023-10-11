@@ -31,56 +31,52 @@
 const readline = require("readline-sync");
 const MESSAGES = require("./messages.json");
 
+// function to format message prompt
 function prompt(message) {
   console.log(`=> ${message}`);
 }
+// function to validate input
+// function invalidNumber(number) {
+//   return Number.isNaN(parseFloat(number));
+// }
 
-function invalidNumber(number) {
-  return Number.isNaN(parseFloat(number));
+// Function to calculate the monthly payment
+function calculator(loanAmount, anualInterestRate, loanDurationYears) {
+  // Convert annual interest rate to monthly interest rate
+  const monthlyInterestRate = anualInterestRate / 12 / 100;
+
+  // Convert loan duration from years to months
+  const loanDurationMonths = loanDurationYears * 12;
+
+  // Calculate monthly payment
+  const monthlyPayment =
+    loanAmount *
+    (monthlyInterestRate /
+      (1 - Math.pow(1 + monthlyInterestRate, -loanDurationMonths)));
+  // Return the result as a string formatted as currency
+  return monthlyPayment.toFixed(2);
 }
 
-function calculator() {
-  // welcome message
+// Main execution
+function main() {
+  // Welcome
   prompt(MESSAGES["en"]["welcome"]);
-
-  while (true) {
-    // the loan amount
-    prompt(MESSAGES["en"]["loan_amount"]);
-    let amount = readline.question();
-    let amountStrArr = amount.split("");
-    while (
-      amountStrArr[0] !== "$" ||
-      invalidNumber(amountStrArr.slice(1).join(""))
-    ) {
-      prompt(MESSAGES["en"]["invalid"]);
-      amount = readline.question();
-      amountStrArr = amount.split("");
-    }
-    amount = parseFloat(amountStrArr.slice(1).join(""));
-    // the Annual Percentage Rate (APR)
-    prompt(MESSAGES["en"]["apr"]);
-    let apr = readline.question();
-    let aprStrArr = apr.split("");
-    while (
-      aprStrArr[aprStrArr.length - 1] !== "%" ||
-      invalidNumber(aprStrArr.slice(0, aprStrArr.length - 1).join(""))
-    ) {
-      prompt(MESSAGES["en"]["invalid"]);
-      apr = readline.question();
-      aprStrArr = apr.split("");
-    }
-    apr = parseFloat(aprStrArr.slice(0, aprStrArr.length - 1).join("")) / 100;
-    // // the loan duration
-    prompt(MESSAGES["en"]["duration"]);
-    const years = parseFloat(readline.question());
-    const loanDurationInMonths = years * 12;
-    let monthlyPayments =
-      amount * (apr / (1 - Math.pow(1 + apr, -loanDurationInMonths)));
-    prompt(`${MESSAGES["en"]["payments"]} $${monthlyPayments.toFixed(2)}`);
-    break;
-  }
-
-  prompt(MESSAGES["en"]["end"]);
+  // Get user inputs
+  prompt(MESSAGES["en"]["loan_amount"]);
+  let loanAmount = readline.question();
+  prompt(MESSAGES["en"]["apr"]);
+  let annualInterestRate = readline.question();
+  prompt(MESSAGES["en"]["duration"]);
+  const loanDurationYears = parseFloat(readline.question());
+  // Input validation should be added here
+  // Calculate and display the monthly payment
+  const monthlyPayment = calculator(
+    loanAmount,
+    annualInterestRate,
+    loanDurationYears
+  );
+  prompt(`${MESSAGES["en"]["payments"]} $${monthlyPayment}`);
 }
 
-calculator();
+// Run the program
+main();
