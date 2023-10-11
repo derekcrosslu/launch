@@ -6,6 +6,7 @@
     "duration": "Please enter the number of years you will borrow the loan.",
     "invalid": "Invalid input, please try again.",
     "payments": "Your monthly payments will be ",
+    "another": "Would you like to calculate another loan? (y/n)",
     "end": "Thank you for using the Mortage Car Loan Calculator!!!"
   },
   "es": {
@@ -15,6 +16,7 @@
     "duration": "Por favor ingrese el número de años que pedirá prestado el préstamo.",
     "invalid": "Entrada no válida, por favor intente nuevamente.",
     "payments": "Sus pagos mensuales serán ",
+    "another": "¿Te gustaría calcular otro préstamo? (y/n)",
     "end": "Gracias por usar la calculadora de préstamos hipotecarios para automóviles!!!"
   }
 }
