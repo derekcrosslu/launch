@@ -43,8 +43,8 @@ function invalidNumber(number) {
 function calculator(loanAmount, anualInterestRate, loanDurationYears) {
   // Convert annual interest rate to monthly interest rate
   const monthlyInterestRate = anualInterestRate / 12 / 100;
-  // Convert loan duration from years to months
-  const loanDurationMonths = loanDurationYears * 12;
+  // Convert loan duration from years to months, including non-integer years (edge case)
+  const loanDurationMonths = Math.ceil(loanDurationYears * 12); // Rounding up to handle partial months
   // Calculate monthly payment
   const monthlyPayment =
     loanAmount *
