@@ -19,8 +19,8 @@ numbers[4]; // what will this line return? --- this will return undefined but no
 
 // How can you determine whether a given string ends with an exclamation mark (!)?
 
-let str1 = "Come over here!"; // true
-let str2 = "What's up, Doc?"; // false
+// let str1 = "Come over here!"; // true
+// let str2 = "What's up, Doc?"; // false
 
 str1.indexOf("!") > -1; // true
 str2.indexOf("!") > -1; // false
@@ -75,3 +75,27 @@ Object.assign(ages, additionalAges);
 // Question 7
 
 // Determine whether the name Dino appears in the strings below -- check each string separately:
+let str1 =
+  "Few things in life are as important as house training your pet dinosaur.";
+let str2 = "Fred and Wilma have a pet dinosaur named Dino.";
+str1.includes("Dino"); // false
+str2.includes("Dino"); // true
+// Given extra solutions
+str1.match("Dino") !== null;
+str2.match("Dino") !== null;
+// I remember also
+str1.indexOf("Dino") > -1; // false
+str2.indexOf("Dino") > -1; // true
+
+// Question 8
+
+// How can we add the family pet, "Dino", to the following array?
+let flintstones = ["Fred", "Barney", "Wilma", "Betty", "Bambam", "Pebbles"];
+// does mutate the array
+flintstones.push("Dino");
+// does not mutate the array
+flintstones.concat("Dino");
+
+// Question 9
+
+// In the previous problem, our first answer added 'Dino' to the array like this:
