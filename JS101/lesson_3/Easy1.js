@@ -90,7 +90,7 @@ str2.indexOf("Dino") > -1; // true
 // Question 8
 
 // How can we add the family pet, "Dino", to the following array?
-let flintstones = ["Fred", "Barney", "Wilma", "Betty", "Bambam", "Pebbles"];
+// let flintstones = ["Fred", "Barney", "Wilma", "Betty", "Bambam", "Pebbles"];
 // does mutate the array
 flintstones.push("Dino");
 // does not mutate the array
@@ -99,3 +99,20 @@ flintstones.concat("Dino");
 // Question 9
 
 // In the previous problem, our first answer added 'Dino' to the array like this:
+let flintstones = ["Fred", "Barney", "Wilma", "Betty", "Bambam", "Pebbles"];
+flintstones.push("Dino");
+// How can we add multiple items to our array? ('Dino' and 'Hoppy')
+// does mutate the array
+flintstones.push("Dino", "Happy");
+// does not mutate the array
+flintstones.concat("Dino", "Happy");
+
+// Question 10
+
+// Return a new version of this sentence that ends just before the word house. Don't worry about spaces or punctuation: remove everything starting from the beginning of house to the end of the sentence.
+let advice =
+  "Few things in life are as important as house training your pet dinosaur.";
+
+// Expected return value:
+// => 'Few things in life are as important as '
+advice.slice(0, advice.indexOf("house"));
