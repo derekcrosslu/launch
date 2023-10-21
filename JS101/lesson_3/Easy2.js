@@ -28,7 +28,7 @@ numbers.forEach((x) => arr.unshift(x));
 // Question 3
 
 // Given a number and an array, determine whether the number is included in the array.
-let numbers = [1, 2, 3, 4, 5, 15, 16, 17, 95, 96, 99];
+// let numbers = [1, 2, 3, 4, 5, 15, 16, 17, 95, 96, 99];
 
 let number1 = 8; // false
 let number2 = 95; // true
@@ -52,7 +52,7 @@ console.log(num); // [ 1, 2, 4, 5 ]
 // Question 6
 
 // Suppose we build an array like this:
-let flintstones = ["Fred", "Wilma"];
+// let flintstones = ["Fred", "Wilma"];
 flintstones.push(["Barney", "Betty"]);
 flintstones.push(["Bambam", "Pebbles"]);
 
@@ -78,3 +78,48 @@ let newFlinstones = flintstones.flat();
 // Question 7
 
 // Consider the following object:
+let flintstones = {
+  Fred: 0,
+  Wilma: 1,
+  Barney: 2,
+  Betty: 3,
+  Bambam: 4,
+  Pebbles: 5,
+};
+// Create an array from this object that contains only two elements: Barney's name and Barney's number:
+["Barney", 2];
+Object.entries(flintstones).filter((x) => x[0] === "Barney"); // [["Barney", 2]];
+Object.entries(flintstones)
+  .filter((x) => x[0] === "Barney")
+  .pop(); // [ 'Barney', 2 ]
+Object.entries(flintstones)
+  .filter((x) => x[0] === "Barney")
+  .shift(); // [ 'Barney', 2 ]
+Object.entries(flintstones)
+  .filter((x) => x[0] === "Barney")
+  .flat(); // [ 'Barney', 2 ]
+
+//   Question 8
+
+// How would you check whether the objects assigned to variables numbers and table below are arrays?
+let numbers = [1, 2, 3, 4]; // true
+let table = { field1: 1, field2: 2, field3: 3, field4: 4 }; // false
+Array.isArray(numbers); // false
+Array.isArray(table); // false
+
+// Question 9
+
+// Back in the stone age (before CSS), we used spaces to align things on the screen. If we have a 40-character wide table of Flintstone family members, how can we center the following title above the table with spaces?
+let title = "Flintstone Family Members";
+
+// my solution
+let pad = Math.floor((40 - title.length) / 2);
+title.padStart(pad + title.length);
+
+// Question 10
+
+// Write a one-line expression to count the number of lower-case t characters in each of the following strings:
+let statement1 = "The Flintstones Rock!";
+let statement2 = "Easy come, easy go.";
+statement1.split("").filter((x) => x === "t").length; // 2
+statement2.split("").filter((x) => x === "t").length; // 0
