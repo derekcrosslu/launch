@@ -150,3 +150,29 @@ console.log(/^[\d]+$/.test("99")); // true
 console.log(/^[\d]+$/.test("a99")); // false
 console.log(/^[0-9]+$/.test("99")); // true
 console.log(/^[0-9]+$/.test("a99")); // false
+
+/// another case for question 3 (this will change the array since we are reassigning array elements which is an example of call sharing)
+function reassign(arrA, arrB) {
+  arrA[0] = arrB[0];
+  arrB[0] = arrA[0];
+}
+
+const arrA = [1, 2];
+const arrB = [3, 4];
+
+reassign(arrA, arrB);
+console.log("arrA: ", arrA); //  [ 3, 2 ]
+console.log("arrB: ", arrB); // [ 3, 4 ]
+
+// on the other hand this does not alter the array since we are only reassigning the array itself not the elements
+function reassign1(arrA1, arrB1) {
+  arrA1 = arrB1;
+  arrB1 = arrA1;
+}
+
+const arrA1 = [1, 2];
+const arrB1 = [3, 4];
+
+reassign1(arrA1, arrB1);
+console.log("arrA1: ", arrA1); // [ 1, 2 ]
+console.log("arrB1: ", arrB1); // [ 3, 4 ]
