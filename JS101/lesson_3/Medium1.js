@@ -91,3 +91,5 @@ console.log("buffer1: ", buffer1); // buffer1: [1];
 console.log("buffer2: ", buffer2); // buffer2:  []
 
 // the difference is that push modifies the buffer outside the scope of the function whereas concat does not
+// answer:
+// Yes, there is a difference. While both functions have the same return value, the first implementation mutates the argument represented by buffer. That is, the caller will see that the array is different when the function returns. The rollingBuffer2 implementation doesn't mutate the argument specified by the value of buffer
