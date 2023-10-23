@@ -102,3 +102,64 @@ console.log(0.3 + 0.6 === 0.9); // true
 // answer
 console.log(0.3 + 0.6); // 0.899999
 console.log(0.3 + 0.6 === 0.9); // false
+console.log(parseFloat(0.3) + parseFloat(0.6) === parseFloat(0.9)); // false
+
+// Question 6
+
+// What do you think the following code will output?
+let nanArray = [NaN];
+console.log(nanArray[0] === NaN); // false
+// answear
+console.log(nanArray[0] === NaN); // false
+console.log(Number.isNaN(nanArray[0])); // true
+
+// Question 7
+
+// What is the output of the following code?
+let answer = 42;
+
+function messWithIt(someNumber) {
+  return (someNumber += 8);
+}
+
+let newAnswer = messWithIt(answer);
+
+console.log(answer - 8); // 34
+// since primitive numbers are unmutable 'answer' will retain its value after function 'messWithIt'
+// answer
+console.log(answer - 8); // 34
+
+// Question 8
+
+// One day, Spot was playing with the Munster family's home computer, and he wrote a small program to mess with their demographic data:
+let munsters = {
+  Herman: { age: 32, gender: "male" },
+  Lily: { age: 30, gender: "female" },
+  Grandpa: { age: 402, gender: "male" },
+  Eddie: { age: 10, gender: "male" },
+  Marilyn: { age: 23, gender: "female" },
+};
+
+function messWithDemographics(demoObject) {
+  Object.values(demoObject).forEach((familyMember) => {
+    familyMember["age"] += 42;
+    familyMember["gender"] = "other";
+  });
+}
+// After writing this function, he typed the following code:
+messWithDemographics(munsters);
+// Before Grandpa could stop him, Spot hit the Enter key with his tail. Did the family's data get ransacked? Why or why not?
+// yes, the object property values will be changed adding 42 to each age and changing to 'other' each gender
+
+// Question 9
+
+// Function and method calls can take expressions as arguments. Suppose we define a function named rps as follows, which follows the classic rules of the rock-paper-scissors game, but with a slight twist: in the event of a tie, it just returns the choice made by both players.
+function rps(fist1, fist2) {
+  if (fist1 === "rock") {
+    return fist2 === "paper" ? "paper" : "rock";
+  } else if (fist1 === "paper") {
+    return fist2 === "scissors" ? "scissors" : "paper";
+  } else {
+    return fist2 === "rock" ? "rock" : "scissors";
+  }
+}
