@@ -163,3 +163,20 @@ function rps(fist1, fist2) {
     return fist2 === "rock" ? "rock" : "scissors";
   }
 }
+// What does the following code output?
+console.log(rps(rps(rps("rock", "paper"), rps("rock", "scissors")), "rock")); // 'rock'
+// answer
+// paper
+
+// Question 10
+
+// Consider these two simple functions:
+function foo(param = "no") {
+  return "yes";
+}
+
+function bar(param = "no") {
+  return param === "no" ? "yes" : "no";
+}
+bar(foo()); // yes
+// 'no' because foo will always return 'yes'
