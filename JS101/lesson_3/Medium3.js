@@ -52,8 +52,9 @@ function factors(number) {
       factors.push(divisor);
     }
     divisor -= 1;
-    console.log("divisor: ", divisor);
   }
   return factors;
 }
 console.log("factors(12): ", factors(12));
+console.log("factors(-1): ", factors(-1));
+console.log("factors(0): ", factors(0));
