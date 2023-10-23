@@ -43,18 +43,51 @@
 
 // Bonus: What is the purpose of number % divisor === 0 in that code? // to check if the number has the divisor
 
-function factors(number) {
-  if (number <= 0) return 1;
-  let divisor = number;
-  let factors = [];
-  while (divisor > 0) {
-    if (number % divisor === 0) {
-      factors.push(divisor);
-    }
-    divisor -= 1;
+// function factors(number) {
+//   if (number <= 0) return 1;
+//   let divisor = number;
+//   let factors = [];
+//   while (divisor > 0) {
+//     if (number % divisor === 0) {
+//       factors.push(divisor);
+//     }
+//     divisor -= 1;
+//   }
+//   return factors;
+// }
+// console.log("factors(12): ", factors(12));
+// console.log("factors(-1): ", factors(-1));
+// console.log("factors(0): ", factors(0));
+
+// Question 4
+
+// Alyssa was asked to write an implementation of a rolling buffer. You can add and remove elements from a rolling buffer. However, once the buffer becomes full, any new elements will displace the oldest elements in the buffer.
+
+// She wrote two implementations of the code for adding elements to the buffer. In presenting the code to her team leader, she said "Take your pick. Do you prefer push() or concat() for modifying the buffer?".
+
+// Is there a difference between these implementations, other than the method she used to add an element to the buffer? You may assume that newElement will always be a primitive value.
+
+function addToRollingBuffer1(buffer, maxBufferSize, newElement) {
+  buffer.push(newElement);
+  if (buffer.length > maxBufferSize) {
+    buffer.shift();
   }
-  return factors;
+  return buffer;
 }
-console.log("factors(12): ", factors(12));
-console.log("factors(-1): ", factors(-1));
-console.log("factors(0): ", factors(0));
+
+function addToRollingBuffer2(buffer, maxBufferSize, newElement) {
+  buffer = buffer.concat(newElement);
+  if (buffer.length > maxBufferSize) {
+    buffer.shift();
+  }
+  return buffer;
+}
+const buffer1 = [];
+const buffer2 = [];
+
+addToRollingBuffer1(buffer1, 2, 1);
+addToRollingBuffer2(buffer2, 2, 1);
+console.log("buffer1: ", buffer1); // buffer1: [1];
+console.log("buffer2: ", buffer2); // buffer2:  []
+
+// the difference is that push modifies the buffer outside the scope of the function whereas concat does not
