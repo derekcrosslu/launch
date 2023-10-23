@@ -67,29 +67,35 @@
 
 // Is there a difference between these implementations, other than the method she used to add an element to the buffer? You may assume that newElement will always be a primitive value.
 
-function addToRollingBuffer1(buffer, maxBufferSize, newElement) {
-  buffer.push(newElement);
-  if (buffer.length > maxBufferSize) {
-    buffer.shift();
-  }
-  return buffer;
-}
+// function addToRollingBuffer1(buffer, maxBufferSize, newElement) {
+//   buffer.push(newElement);
+//   if (buffer.length > maxBufferSize) {
+//     buffer.shift();
+//   }
+//   return buffer;
+// }
 
-function addToRollingBuffer2(buffer, maxBufferSize, newElement) {
-  buffer = buffer.concat(newElement);
-  if (buffer.length > maxBufferSize) {
-    buffer.shift();
-  }
-  return buffer;
-}
-const buffer1 = [];
-const buffer2 = [];
+// function addToRollingBuffer2(buffer, maxBufferSize, newElement) {
+//   buffer = buffer.concat(newElement);
+//   if (buffer.length > maxBufferSize) {
+//     buffer.shift();
+//   }
+//   return buffer;
+// }
+// const buffer1 = [];
+// const buffer2 = [];
 
-addToRollingBuffer1(buffer1, 2, 1);
-addToRollingBuffer2(buffer2, 2, 1);
-console.log("buffer1: ", buffer1); // buffer1: [1];
-console.log("buffer2: ", buffer2); // buffer2:  []
-
+// addToRollingBuffer1(buffer1, 2, 1);
+// addToRollingBuffer2(buffer2, 2, 1);
+// console.log("buffer1: ", buffer1); // buffer1: [1];
+// console.log("buffer2: ", buffer2); // buffer2:  []
+// my answer
 // the difference is that push modifies the buffer outside the scope of the function whereas concat does not
 // answer:
 // Yes, there is a difference. While both functions have the same return value, the first implementation mutates the argument represented by buffer. That is, the caller will see that the array is different when the function returns. The rollingBuffer2 implementation doesn't mutate the argument specified by the value of buffer
+
+// Question 5
+
+// What will the following two lines of code output?
+console.log(0.3 + 0.6); // 0.9
+console.log(0.3 + 0.6 === 0.9); // true
