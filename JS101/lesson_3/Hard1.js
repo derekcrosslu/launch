@@ -99,13 +99,39 @@ function isAnIpNumber(str) {
 
   return false;
 }
+function isAnIpNumber2(str) {
+  if (/[0-9]/.test(str)) {
+    let number = Number(str);
+    return number >= 0 && number <= 255;
+  }
+
+  return false;
+}
+
+// function isDotSeparatedIpAddress(inputString) {
+//   let dotSeparatedWords = inputString.split(".");
+//   let arr = [];
+//   while (dotSeparatedWords.length > 0) {
+//     let word = dotSeparatedWords.pop();
+//     if (!isAnIpNumber2(word)) {
+//       return false;
+//     } else {
+//       arr.push(word);
+//     }
+//   }
+
+//   return arr.length === 4 ? true : false;
+// }
 
 function isDotSeparatedIpAddress(inputString) {
   let dotSeparatedWords = inputString.split(".");
+  if (dotSeparatedWords.length !== 4) {
+    return false;
+  }
   while (dotSeparatedWords.length > 0) {
     let word = dotSeparatedWords.pop();
     if (!isAnIpNumber(word)) {
-      break;
+      return false;
     }
   }
 
@@ -115,3 +141,12 @@ function isDotSeparatedIpAddress(inputString) {
 // Alyssa reviewed Ben's code and said, "It's a good start, but you missed a few things. You're not returning a false condition, and you're not handling the case when the input string has more or less than 4 components, e.g., 4.5.5 or 1.2.3.4.5: both those values should be invalid."
 
 // Help Ben fix his code.
+console.log(isDotSeparatedIpAddress("aa.4.5.11"));
+console.log(isDotSeparatedIpAddress("256.4.5.11"));
+console.log(isDotSeparatedIpAddress("10.4.5.11"));
+console.log(isDotSeparatedIpAddress("4.5.5"));
+console.log(isDotSeparatedIpAddress("1.2.3.4.5"));
+console.log(/^[\d]+$/.test("99")); // true
+console.log(/^[\d]+$/.test("a99")); // false
+console.log(/^[0-9]+$/.test("99")); // true
+console.log(/^[0-9]+$/.test("a99")); // false
