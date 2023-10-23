@@ -99,3 +99,6 @@
 // What will the following two lines of code output?
 console.log(0.3 + 0.6); // 0.9
 console.log(0.3 + 0.6 === 0.9); // true
+// answer
+console.log(0.3 + 0.6); // 0.899999
+console.log(0.3 + 0.6 === 0.9); // false
