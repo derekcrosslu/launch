@@ -1,20 +1,14 @@
 {
-  "name": "js101",
+  "name": "eslint",
   "version": "1.0.0",
-  "main": "How_big_is_the_room.js",
+  "description": "",
+  "main": "hello.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "readline": "^1.3.0",
-    "readline-sync": "^1.4.10"
-  },
-  "description": "",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "eslint": "^7.12.1",

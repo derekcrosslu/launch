@@ -1,5 +1,6 @@
 
 // ignore the following files from git
+node_modules
 q1.js
 q2.js
 q3.js
@@ -10,3 +11,4 @@ q7.js
 q8.js
 q9.js
 q10.js
+q11.js

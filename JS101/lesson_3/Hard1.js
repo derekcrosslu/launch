@@ -176,3 +176,63 @@ const arrB1 = [3, 4];
 reassign1(arrA1, arrB1);
 console.log("arrA1: ", arrA1); // [ 1, 2 ]
 console.log("arrB1: ", arrB1); // [ 3, 4 ]
+
+function createAdder(initialValue, incrementAmount) {
+  let result = initialValue;
+
+  function incrementDefault() {
+    result = result + incrementAmount;
+  }
+
+  function incrementCustom(customIncrementAmount) {
+    result = result + customIncrementAmount;
+  }
+
+  function getCurrentResult() {
+    console.log("Current Result ", result);
+    return result;
+  }
+
+  return {
+    incrementDefault,
+    incrementCustom,
+    getCurrentResult,
+  };
+}
+
+const adder1 = createAdder(0, 2); // Initialize with an initial value of 0 and increment by 2
+const adder2 = createAdder(10, 5); // Initialize with an initial value of 10 and increment by 5
+console.log("adder2: ", adder2);
+
+adder1.incrementDefault(); // Increment by the default amount (2)
+adder2.incrementCustom(7); // Increment by a custom amount (7)
+
+adder1.getCurrentResult(); // Output: Current Result 2
+adder2.getCurrentResult(); // Output: Current Result 17
+
+// Named Function Expression
+const namedFunction = function functionName() {
+  console.log("Named Function Expression");
+};
+
+// Arrow Function
+const arrowFunction = () => {
+  console.log("Arrow Function");
+};
+
+functionName(); // Call function declaration (can be hoisted)
+namedFunction(); // Call the named function (cannot be hoisted)
+arrowFunction(); // Call the arrow function (cannot be hoisted)
+
+function functionName() {
+  console.log("Function declaration");
+}
+
+let greeting = "Hello";
+
+while (true) {
+  let greeting = "Hi";
+  break;
+}
+
+console.log(greeting);
